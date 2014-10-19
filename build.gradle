@@ -7,12 +7,14 @@ repositories { mavenCentral() }
 
 ext {
 	versionPoi = "3.10.1"
+	versionGuava = "18.0"
 	versionLombok = "1.14.8"
 }
 
 dependencies {
 	compile "org.apache.poi:poi:${versionPoi}"
 	compile "org.apache.poi:poi-ooxml:${versionPoi}"
+	compile "com.google.guava:guava:${versionGuava}"
 	compile "org.projectlombok:lombok:${versionLombok}"
 }
 

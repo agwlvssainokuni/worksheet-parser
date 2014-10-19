@@ -9,6 +9,7 @@
 	<properties>
 		<versionPoi>3.10.1</versionPoi>
 		<versionLombok>1.14.8</versionLombok>
+		<versionGuava>18.0</versionGuava>
 		<versionJava>1.6</versionJava>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -22,6 +23,11 @@
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>${versionPoi}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${versionGuava}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
