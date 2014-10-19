@@ -16,6 +16,8 @@
 
 package cherry.parser.worksheet;
 
+import static cherry.parser.worksheet.CellUtil.getCellValueAsString;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -127,26 +129,6 @@ public class SheetBasedParser implements WorkbookParser {
 		}
 
 		return typeDef;
-	}
-
-	private String getCellValueAsString(Cell cell) {
-		switch (cell.getCellType()) {
-		case Cell.CELL_TYPE_STRING:
-			return cell.getStringCellValue();
-		case Cell.CELL_TYPE_NUMERIC:
-			return String.valueOf((int) cell.getNumericCellValue());
-		case Cell.CELL_TYPE_FORMULA:
-			switch (cell.getCachedFormulaResultType()) {
-			case Cell.CELL_TYPE_STRING:
-				return cell.getStringCellValue();
-			case Cell.CELL_TYPE_NUMERIC:
-				return String.valueOf((int) cell.getNumericCellValue());
-			default:
-				return null;
-			}
-		default:
-			return null;
-		}
 	}
 
 }
