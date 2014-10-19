@@ -16,6 +16,11 @@
 
 package cherry.parser.worksheet;
 
+import static com.google.common.base.CaseFormat.LOWER_CAMEL;
+import static com.google.common.base.CaseFormat.LOWER_UNDERSCORE;
+import static com.google.common.base.CaseFormat.UPPER_CAMEL;
+import static com.google.common.base.CaseFormat.UPPER_UNDERSCORE;
+
 import java.util.LinkedHashMap;
 
 import lombok.EqualsAndHashCode;
@@ -27,10 +32,16 @@ public class ItemDef extends LinkedHashMap<String, String> {
 
 	private static final long serialVersionUID = 1L;
 
-	public String capitalize(String key) {
-		StringBuilder b = new StringBuilder(get(key));
-		b.setCharAt(0, Character.toUpperCase(b.charAt(0)));
-		return b.toString();
+	public String upperCamel(String key) {
+		return LOWER_CAMEL.to(UPPER_CAMEL, get(key));
+	}
+
+	public String lowerUnderscore(String key) {
+		return LOWER_CAMEL.to(LOWER_UNDERSCORE, get(key));
+	}
+
+	public String upperUnderscore(String key) {
+		return LOWER_CAMEL.to(UPPER_UNDERSCORE, get(key));
 	}
 
 }

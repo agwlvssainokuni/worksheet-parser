@@ -16,6 +16,9 @@
 
 package cherry.parser.worksheet;
 
+import static com.google.common.base.CaseFormat.LOWER_CAMEL;
+import static com.google.common.base.CaseFormat.UPPER_CAMEL;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -68,9 +71,7 @@ public class TypeDef extends LinkedHashMap<String, String> {
 	}
 
 	public String getFormName(String key) {
-		StringBuilder b = new StringBuilder(getClassName(key));
-		b.setCharAt(0, Character.toLowerCase(b.charAt(0)));
-		return b.toString();
+		return UPPER_CAMEL.to(LOWER_CAMEL, getClassName(key));
 	}
 
 	public String getDirName(String key) {
