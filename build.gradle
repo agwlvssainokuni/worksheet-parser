@@ -1,0 +1,23 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+
+version = "0.0"
+
+repositories { mavenCentral() }
+
+ext {
+	versionPoi = "3.10.1"
+	versionLombok = "1.14.8"
+}
+
+dependencies {
+	compile "org.apache.poi:poi:${versionPoi}"
+	compile "org.apache.poi:poi-ooxml:${versionPoi}"
+	compile "org.projectlombok:lombok:${versionLombok}"
+}
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
